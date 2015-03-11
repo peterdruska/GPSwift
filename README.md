@@ -8,13 +8,7 @@ File creates singleton class to provide geo location update data in human readab
 
 ## Install
 
-In viewController just import CoreLocation framework
-
-``` swift
-import CoreLocation
-```
-
-create variables of `CLLocationManager` and `GPSwift`:
+In viewController just create variables of `CLLocationManager` and `GPSwift`:
 
 ``` swift
 var locationManager = CLLocationManager()
