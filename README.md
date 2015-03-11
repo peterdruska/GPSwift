@@ -58,8 +58,6 @@ func locationHasChanged() {
     println("\(gpsLocation.address.locality)")
     println("\(gpsLocation.address.postalCode)")
     println("\(gpsLocation.address.ISOcountryCode)")
-
-    locatingActivityIndicatorView.stopAnimating()
 }
 ```
 
