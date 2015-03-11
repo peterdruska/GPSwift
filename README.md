@@ -64,3 +64,5 @@ func locationHasChanged() {
 ```
 
 And that's it.
+
+Happy geo locating.
