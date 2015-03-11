@@ -55,6 +55,12 @@ func locationHasChanged() {
 }
 ```
 
+## Screens
+
+![Preview](/GPSwift_1.PNG)
+
+![Preview](/GPSwift_2.PNG)
+
 And that's it.
 
 Happy geo locating.
