@@ -8,6 +8,8 @@ File creates singleton class to provide geo location update data in human readab
 
 ## Install
 
+Copy *GPSwift.swift* file to your project.
+
 In viewController just create variables of `CLLocationManager` and `GPSwift`:
 
 ``` swift
