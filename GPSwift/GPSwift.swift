@@ -17,6 +17,7 @@ struct Address {
     var locality = String()
     var postalCode = String()
     var ISOcountryCode = String()
+    var location = CLLocation()
 }
 
 class GPSwift: NSObject, CLLocationManagerDelegate {
@@ -74,6 +75,7 @@ class GPSwift: NSObject, CLLocationManagerDelegate {
                 self.address.locality = pm.locality ?? "—"
                 self.address.postalCode = pm.postalCode ?? "—"
                 self.address.ISOcountryCode = pm.ISOcountryCode ?? "—"
+                self.address.location = location
                 NSNotificationCenter.defaultCenter().postNotificationName(locationChangedNotification, object: nil)
             }
             else {
