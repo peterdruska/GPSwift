@@ -57,12 +57,12 @@ func locationHasChanged() {
 }
 ```
 
+And that's it.
+
+Happy geo locating.
+
 ## Screens
 
 ![Preview](/GPSwift_1.png)
 
 ![Preview](/GPSwift_2.png)
-
-And that's it.
-
-Happy geo locating.
