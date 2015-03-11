@@ -7,11 +7,9 @@
 //
 
 import UIKit
-import CoreLocation
 
 class ViewController: UIViewController {
     
-    var locationManager = CLLocationManager()
     var gpsLocation: GPSwift!
 
     @IBOutlet weak var streetLabel: UILabel!
