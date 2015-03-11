@@ -57,9 +57,9 @@ func locationHasChanged() {
 
 ## Screens
 
-![Preview](/GPSwift_1.png)
+![Preview](/GPSwift_1.PNG)
 
-![Preview](/GPSwift_2.png)
+![Preview](/GPSwift_2.PNG)
 
 And that's it.
 
