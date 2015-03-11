@@ -69,11 +69,11 @@ class GPSwift: NSObject, CLLocationManagerDelegate {
             
             if placemarks.count > 0 {
                 let pm = placemarks[0] as CLPlacemark
-                self.address.thoroughfare = pm.thoroughfare
-                self.address.subThoroughfare = pm.subThoroughfare
-                self.address.locality = pm.locality
-                self.address.postalCode = pm.postalCode
-                self.address.ISOcountryCode = pm.ISOcountryCode
+                self.address.thoroughfare = pm.thoroughfare ?? "—"
+                self.address.subThoroughfare = pm.subThoroughfare ?? "—"
+                self.address.locality = pm.locality ?? "—"
+                self.address.postalCode = pm.postalCode ?? "—"
+                self.address.ISOcountryCode = pm.ISOcountryCode ?? "—"
                 NSNotificationCenter.defaultCenter().postNotificationName(locationChangedNotification, object: nil)
             }
             else {

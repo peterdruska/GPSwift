@@ -18,13 +18,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var postalCodeLabel: UILabel!
     @IBOutlet weak var countryLabel: UILabel!
     @IBOutlet weak var locatingActivityIndicatorView: UIActivityIndicatorView!
+    @IBOutlet weak var statusIndicator: UILabel!
     @IBAction func startLocating(sender: AnyObject) {
         locatingActivityIndicatorView.startAnimating()
         gpsLocation.startLocating()
+        statusIndicator.textColor = UIColor(red: 27.0/255.0, green: 165.0/255.0, blue: 0.0, alpha: 1.0)
     }
     @IBAction func stopLocating(sender: AnyObject) {
         locatingActivityIndicatorView.stopAnimating()
         gpsLocation.stopLocating()
+        statusIndicator.textColor = UIColor.lightGrayColor()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
