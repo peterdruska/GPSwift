@@ -14,7 +14,7 @@ In viewController just import CoreLocation framework
 import CoreLocation
 ```
 
-create variables of CLLocationManager and GPSwift:
+create variables of `CLLocationManager` and `GPSwift`:
 
 ``` swift
 var locationManager = CLLocationManager()
@@ -39,7 +39,7 @@ or stop locating:
 gpsLocation.stopLocating()
 ```
 
-After succesfull location update GPSwift singleton post observer named *locationChangedNotification*. So add observer to viewController like this:
+After succesfull location update GPSwift singleton post observer named `locationChangedNotification`. So add observer to viewController like this:
 
 ``` swift
 NSNotificationCenter.defaultCenter().addObserver(
@@ -49,16 +49,18 @@ NSNotificationCenter.defaultCenter().addObserver(
     object: nil)
 ```
 
-Then use function *locationHasChanged* to read geo located address:
+Then use function `locationHasChanged` to read geo located address:
 
 ``` swift
 func locationHasChanged() {
-    streetLabel.text = gpsLocation.address.thoroughfare
-    numberLabel.text = gpsLocation.address.subThoroughfare
-    cityLabel.text = gpsLocation.address.locality
-    postalCodeLabel.text = gpsLocation.address.postalCode
-    countryLabel.text = gpsLocation.address.ISOcountryCode
+    println("\(gpsLocation.address.thoroughfare)")
+    println("\(gpsLocation.address.subThoroughfare)")
+    println("\(gpsLocation.address.locality)")
+    println("\(gpsLocation.address.postalCode)")
+    println("\(gpsLocation.address.ISOcountryCode)")
 
     locatingActivityIndicatorView.stopAnimating()
 }
 ```
+
+And that's it.
