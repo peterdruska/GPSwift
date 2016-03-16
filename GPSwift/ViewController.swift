@@ -56,7 +56,7 @@ class ViewController: UIViewController {
         cityLabel.text = gpsLocation.address.locality
         postalCodeLabel.text = gpsLocation.address.postalCode
         countryLabel.text = gpsLocation.address.ISOcountryCode
-        println("\(gpsLocation.address.location.coordinate.latitude) \(gpsLocation.address.location.coordinate.longitude)")
+        print("\(gpsLocation.address.location.coordinate.latitude) \(gpsLocation.address.location.coordinate.longitude)")
         
         self.readTime(NSDate())
         

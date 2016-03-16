@@ -46,17 +46,17 @@ class GPSwift: NSObject, CLLocationManagerDelegate {
     }
     
     func startLocating() {
-        println("start locating")
+        print("start locating")
         locationManager.startUpdatingLocation()
     }
     
     func stopLocating() {
-        println("stop locating")
+        print("stop locating")
         locationManager.stopUpdatingLocation()
     }
     
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        location = locations.last as CLLocation
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        location = locations.last! as CLLocation
         self.locationAddress(location)
     }
     
@@ -64,12 +64,12 @@ class GPSwift: NSObject, CLLocationManagerDelegate {
         CLGeocoder().reverseGeocodeLocation(location, completionHandler: {(placemarks, error) -> Void in
             
             if error != nil {
-                println("Reverse geocoder failed with error" + error.localizedDescription)
+                print("Reverse geocoder failed with error" + error!.localizedDescription)
                 return
             }
             
-            if placemarks.count > 0 {
-                let pm = placemarks[0] as CLPlacemark
+            if placemarks!.count > 0 {
+                let pm = placemarks![0] as CLPlacemark
                 self.address.thoroughfare = pm.thoroughfare ?? "—"
                 self.address.subThoroughfare = pm.subThoroughfare ?? "—"
                 self.address.locality = pm.locality ?? "—"
@@ -79,7 +79,7 @@ class GPSwift: NSObject, CLLocationManagerDelegate {
                 NSNotificationCenter.defaultCenter().postNotificationName(locationChangedNotification, object: nil)
             }
             else {
-                println("Problem with the data received from geocoder")
+                print("Problem with the data received from geocoder")
             }
         })
     }
